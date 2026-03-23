@@ -1,5 +1,5 @@
 # ==========================================
-# 基础配置 (General)
+# 1. 基础配置 (General)
 # ==========================================
 port: 7890
 socks-port: 7891
@@ -9,23 +9,22 @@ log-level: info
 ipv6: false
 external-controller: 127.0.0.1:9090
 
-# DNS 配置 (可选，提升解析速度和防污染，已添加基础推荐配置)
+# DNS 配置 (提升解析速度和防污染)
 dns:
   enable: true
   listen: 0.0.0.1:1053
   enhanced-mode: fake-ip
   nameserver:
-    - 114.114.114.114
     - 223.5.5.5
     - 8.8.8.8
 
 # ==========================================
-# 代理提供者 (Proxy Providers) - ⚠️ 请在此处填入你的订阅链接
+# 2. 代理提供者 (Proxy Providers) - 填入机场订阅
 # ==========================================
 proxy-providers:
   airport_sub:
     type: http
-    # 👇把下面双引号里的内容替换成你自己的机场订阅链接
+    # 👇 把下面双引号里的内容替换成你自己的机场订阅链接
     url: "https://liangxin.xyz/api/v1/liangxin?OwO=6e6bb2b659374035d26b3f7036e8e5f5"
     interval: 3600
     path: ./proxies/airport_sub.yaml
@@ -35,10 +34,10 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
 # ==========================================
-# 策略组 (Proxy Groups)
+# 3. 策略组 (Proxy Groups)
 # ==========================================
 proxy-groups:
-  # ---------------- 1. 应用/服务策略组 ----------------
+  # ---------------- 应用/服务策略组 ----------------
   - name: 🚀 节点选择
     type: select
     proxies: [🔯 东亚故转, 🔯 日本故转, 🔯 美州故转, 🇭🇰 东亚节点, 🇯🇵 日本节点, 🇺🇸 美州节点, 🛩️ 普通节点, 🕊️ 低速节点, 🐸 手动切换, DIRECT]
@@ -112,7 +111,7 @@ proxy-groups:
     proxies: [DIRECT, 🚀 节点选择, 🇭🇰 东亚节点, 🇯🇵 日本节点, 🐸 手动切换]
 
 
-  # ---------------- 2. 节点正则筛选组 (Filters) ----------------
+  # ---------------- 节点正则筛选组 ----------------
   - name: 🐸 手动切换
     type: select
     use: [airport_sub]
@@ -154,7 +153,7 @@ proxy-groups:
     filter: '(NF|奈飞|解锁|Netflix|NETFLIX|Media|流媒体)'
 
 
-  # ---------------- 3. 自动回退/故障转移组 (Fallback/Url-test) ----------------
+  # ---------------- 自动回退组 ----------------
   - name: 🔯 东亚故转
     type: fallback
     use: [airport_sub]
@@ -189,224 +188,223 @@ proxy-groups:
 
 
 # ==========================================
-# 规则集提供者 (Rule Providers) - 已修正格式与后缀
+# 4. 规则集提供者 (Rule Providers) - 已应用 bgithub.xyz 镜像
 # ==========================================
 rule-providers:
   DirectList1:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/lexin2002/rules/refs/heads/main/Direct.list"
+    url: "https://bgithub.xyz/lexin2002/rules/raw/main/Direct.list"
     path: ./rules/DirectList1.yaml
     interval: 86400
 
   LocalAreaNetwork:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/LocalAreaNetwork.list"
     path: ./rules/LocalAreaNetwork.yaml
     interval: 86400
 
   UnBan:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/UnBan.list"
     path: ./rules/UnBan.yaml
     interval: 86400
 
   BanEasyListChina:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/BanEasyListChina.list"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/BanEasyListChina.list"
     path: ./rules/BanEasyListChina.yaml
     interval: 86400
 
   BanEasyPrivacy:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/BanEasyPrivacy.list"
     path: ./rules/BanEasyPrivacy.yaml
     interval: 86400
 
-  # 👇 这里及以下所有 ACL4SSR 规则都改为了其官方标准库里带规则负载的 YAML 格式，解决 payload 报错
   GoogleFCM:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/GoogleFCM.yaml"
     path: ./rules/GoogleFCM.yaml
     interval: 86400
 
   GoogleCN:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/GoogleCN.yaml"
     path: ./rules/GoogleCN.yaml
     interval: 86400
 
   SteamCN:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/SteamCN.yaml"
     path: ./rules/SteamCN.yaml
     interval: 86400
 
   GitHub:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml"
+    url: "https://bgithub.xyz/blackmatrix7/ios_rule_script/raw/master/rule/Clash/GitHub/GitHub.yaml"
     path: ./rules/GitHub.yaml
     interval: 86400
 
   Microsoft:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Microsoft.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Microsoft.yaml"
     path: ./rules/Microsoft.yaml
     interval: 86400
 
   Apple:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Apple.yaml"
     path: ./rules/Apple.yaml
     interval: 86400
 
   Telegram:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Telegram.yaml"
     path: ./rules/Telegram.yaml
     interval: 86400
 
   Speedtest:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml"
+    url: "https://bgithub.xyz/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Speedtest/Speedtest.yaml"
     path: ./rules/Speedtest.yaml
     interval: 86400
 
   AI:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/AI.yaml"
     path: ./rules/AI.yaml
     interval: 86400
 
   OpenAi:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/OpenAi.yaml"
     path: ./rules/OpenAi.yaml
     interval: 86400
 
   Epic:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Epic.yaml"
     path: ./rules/Epic.yaml
     interval: 86400
 
   Origin:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Origin.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Origin.yaml"
     path: ./rules/Origin.yaml
     interval: 86400
 
   Sony:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Sony.yaml"
     path: ./rules/Sony.yaml
     interval: 86400
 
   Steam:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Steam.yaml"
     path: ./rules/Steam.yaml
     interval: 86400
 
   Nintendo:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Nintendo.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Nintendo.yaml"
     path: ./rules/Nintendo.yaml
     interval: 86400
 
   YouTube:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/YouTube.yaml"
     path: ./rules/YouTube.yaml
     interval: 86400
 
   Netflix:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Netflix.yaml"
     path: ./rules/Netflix.yaml
     interval: 86400
 
   TikTok:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml"
+    url: "https://bgithub.xyz/blackmatrix7/ios_rule_script/raw/master/rule/Clash/TikTok/TikTok.yaml"
     path: ./rules/TikTok.yaml
     interval: 86400
 
   ChinaMedia:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/ChinaMedia.yaml"
     path: ./rules/ChinaMedia.yaml
     interval: 86400
 
   ProxyMedia:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/ProxyMedia.yaml"
     path: ./rules/ProxyMedia.yaml
     interval: 86400
 
   Yellow:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/lexin2002/rules/refs/heads/main/Yellow.list" # 这个由你自己维护，如果是纯文本请自行确保格式
+    url: "https://bgithub.xyz/lexin2002/rules/raw/main/Yellow.list"
     path: ./rules/Yellow.yaml
     interval: 86400
 
   ProxyGFWlist:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/ProxyGFWlist.yaml"
     path: ./rules/ProxyGFWlist.yaml
     interval: 86400
 
   ChinaDomain:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/ChinaDomain.yaml"
     path: ./rules/ChinaDomain.yaml
     interval: 86400
 
   ChinaCompanyIp:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/ChinaCompanyIp.yaml"
     path: ./rules/ChinaCompanyIp.yaml
     interval: 86400
 
   Download:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.yaml"
+    url: "https://bgithub.xyz/ACL4SSR/ACL4SSR/raw/master/Clash/Download.yaml"
     path: ./rules/Download.yaml
     interval: 86400
+
 # ==========================================
-# 路由规则 (Rules)
+# 5. 路由规则 (Rules)
 # ==========================================
 rules:
-  # 直连与基础网络规则
   - RULE-SET,DirectList1,🎯 全球直连
   - RULE-SET,LocalAreaNetwork,🎯 全球直连
   - RULE-SET,UnBan,🎯 全球直连
@@ -416,11 +414,9 @@ rules:
   - RULE-SET,ChinaCompanyIp,🎯 全球直连
   - RULE-SET,Download,🎯 全球直连
   
-  # 广告与隐私防护
   - RULE-SET,BanEasyListChina,🛑 广告拦截
   - RULE-SET,BanEasyPrivacy,🛡️ 隐私防护
   
-  # 应用分流
   - RULE-SET,GoogleFCM,📢 谷歌FCM
   - RULE-SET,GitHub,👨🏿‍💻 GitHub
   - RULE-SET,Microsoft,Ⓜ️ 微软服务
@@ -430,14 +426,12 @@ rules:
   - RULE-SET,AI,💬 Ai平台
   - RULE-SET,OpenAi,💬 Ai平台
   
-  # 游戏平台分流
   - RULE-SET,Epic,🎮 游戏平台
   - RULE-SET,Origin,🎮 游戏平台
   - RULE-SET,Sony,🎮 游戏平台
   - RULE-SET,Steam,🎮 游戏平台
   - RULE-SET,Nintendo,🎮 游戏平台
   
-  # 流媒体与视频分流
   - RULE-SET,YouTube,📹 YouTube
   - RULE-SET,Netflix,🎥 奈飞视频
   - RULE-SET,TikTok,🎵 TikTok
@@ -445,11 +439,7 @@ rules:
   - RULE-SET,ProxyMedia,🌍 国外媒体
   - RULE-SET,Yellow,🌍 国外媒体
   
-  # GFW 列表保底机制
   - RULE-SET,ProxyGFWlist,🚀 节点选择
   
-  # 国内IP直连保底
   - GEOIP,CN,🎯 全球直连
-  
-  # 漏网之鱼处理
   - MATCH,🐟 漏网之鱼
