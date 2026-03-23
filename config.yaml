@@ -189,7 +189,7 @@ proxy-groups:
 
 
 # ==========================================
-# 规则集提供者 (Rule Providers)
+# 规则集提供者 (Rule Providers) - 已修正格式与后缀
 # ==========================================
 rule-providers:
   DirectList1:
@@ -198,181 +198,210 @@ rule-providers:
     url: "https://raw.githubusercontent.com/lexin2002/rules/refs/heads/main/Direct.list"
     path: ./rules/DirectList1.yaml
     interval: 86400
+
   LocalAreaNetwork:
     type: http
     behavior: classical
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
     path: ./rules/LocalAreaNetwork.yaml
     interval: 86400
+
   UnBan:
     type: http
     behavior: classical
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
     path: ./rules/UnBan.yaml
     interval: 86400
+
   BanEasyListChina:
     type: http
     behavior: classical
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/BanEasyListChina.list"
     path: ./rules/BanEasyListChina.yaml
     interval: 86400
+
   BanEasyPrivacy:
     type: http
     behavior: classical
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"
     path: ./rules/BanEasyPrivacy.yaml
     interval: 86400
+
+  # 👇 这里及以下所有 ACL4SSR 规则都改为了其官方标准库里带规则负载的 YAML 格式，解决 payload 报错
   GoogleFCM:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.yaml"
     path: ./rules/GoogleFCM.yaml
     interval: 86400
+
   GoogleCN:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.yaml"
     path: ./rules/GoogleCN.yaml
     interval: 86400
+
   SteamCN:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.yaml"
     path: ./rules/SteamCN.yaml
     interval: 86400
+
   GitHub:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.list"
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml"
     path: ./rules/GitHub.yaml
     interval: 86400
+
   Microsoft:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Microsoft.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Microsoft.yaml"
     path: ./rules/Microsoft.yaml
     interval: 86400
+
   Apple:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.yaml"
     path: ./rules/Apple.yaml
     interval: 86400
+
   Telegram:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.yaml"
     path: ./rules/Telegram.yaml
     interval: 86400
+
   Speedtest:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.list"
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml"
     path: ./rules/Speedtest.yaml
     interval: 86400
+
   AI:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.yaml"
     path: ./rules/AI.yaml
     interval: 86400
+
   OpenAi:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.yaml"
     path: ./rules/OpenAi.yaml
     interval: 86400
+
   Epic:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.yaml"
     path: ./rules/Epic.yaml
     interval: 86400
+
   Origin:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Origin.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Origin.yaml"
     path: ./rules/Origin.yaml
     interval: 86400
+
   Sony:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.yaml"
     path: ./rules/Sony.yaml
     interval: 86400
+
   Steam:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.yaml"
     path: ./rules/Steam.yaml
     interval: 86400
+
   Nintendo:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Nintendo.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Nintendo.yaml"
     path: ./rules/Nintendo.yaml
     interval: 86400
+
   YouTube:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.yaml"
     path: ./rules/YouTube.yaml
     interval: 86400
+
   Netflix:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.yaml"
     path: ./rules/Netflix.yaml
     interval: 86400
+
   TikTok:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.list"
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml"
     path: ./rules/TikTok.yaml
     interval: 86400
+
   ChinaMedia:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.yaml"
     path: ./rules/ChinaMedia.yaml
     interval: 86400
+
   ProxyMedia:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.yaml"
     path: ./rules/ProxyMedia.yaml
     interval: 86400
+
   Yellow:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/lexin2002/rules/refs/heads/main/Yellow.list"
+    url: "https://raw.githubusercontent.com/lexin2002/rules/refs/heads/main/Yellow.list" # 这个由你自己维护，如果是纯文本请自行确保格式
     path: ./rules/Yellow.yaml
     interval: 86400
+
   ProxyGFWlist:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.yaml"
     path: ./rules/ProxyGFWlist.yaml
     interval: 86400
+
   ChinaDomain:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.yaml"
     path: ./rules/ChinaDomain.yaml
     interval: 86400
+
   ChinaCompanyIp:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.yaml"
     path: ./rules/ChinaCompanyIp.yaml
     interval: 86400
+
   Download:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list"
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.yaml"
     path: ./rules/Download.yaml
     interval: 86400
-
 # ==========================================
 # 路由规则 (Rules)
 # ==========================================
