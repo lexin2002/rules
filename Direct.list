@@ -19,8 +19,6 @@ DOMAIN-SUFFIX,.cloudflare.com
 DOMAIN-SUFFIX,.cloudflare-cdn.com
 DOMAIN-SUFFIX,static.cloudflareinsights.com
 DOMAIN-SUFFIX,cloudflare-dns.com
-
-# 2. 其他通用 Cloudflare 域名（建议也直连，除非目标网站被墙）
 DOMAIN-SUFFIX,cloudflare.com
 
 # IP段匹配
