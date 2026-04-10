@@ -12,6 +12,7 @@ DOMAIN-KEYWORD,baidu
 DOMAIN-SUFFIX,challenges.cloudflare.com,DIRECT
 DOMAIN-SUFFIX,turnstile.cloudflare.com,DIRECT
 DOMAIN-SUFFIX,cloudflare.com,DIRECT
+DOMAIN-SUFFIX,time.cloudflare.com
 
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
