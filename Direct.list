@@ -18,6 +18,7 @@ DOMAIN-SUFFIX,time.cloudflare.com,DIRECT
 DOMAIN-SUFFIX,.cloudflare.com,DIRECT
 DOMAIN-SUFFIX,.cloudflare-cdn.com,DIRECT
 DOMAIN-SUFFIX,static.cloudflareinsights.com,DIRECT
+DOMAIN-SUFFIX,cloudflare-dns.com,DIRECT
 
 # 2. 其他通用 Cloudflare 域名（建议也直连，除非目标网站被墙）
 DOMAIN-SUFFIX,cloudflare.com,DIRECT
