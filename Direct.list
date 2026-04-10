@@ -8,7 +8,7 @@ DOMAIN-SUFFIX,hao123.com
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,baidu
-#cloudflare
+
 DOMAIN-SUFFIX,challenges.cloudflare.com,DIRECT
 DOMAIN-SUFFIX,turnstile.cloudflare.com,DIRECT
 DOMAIN-SUFFIX,cloudflare.com,DIRECT
