@@ -10,18 +10,18 @@ DOMAIN-SUFFIX,hao123.com
 DOMAIN-KEYWORD,baidu
 
 # 1. Cloudflare 验证与挑战核心域名（必须走直连）
-DOMAIN-SUFFIX,challenges.cloudflare.com,DIRECT
-DOMAIN-SUFFIX,turnstile.cloudflare.com,DIRECT
-DOMAIN-SUFFIX,turnstile.reCaptcha.cloud,DIRECT
-DOMAIN-SUFFIX,turnstile.cloud,DIRECT
-DOMAIN-SUFFIX,time.cloudflare.com,DIRECT
-DOMAIN-SUFFIX,.cloudflare.com,DIRECT
-DOMAIN-SUFFIX,.cloudflare-cdn.com,DIRECT
-DOMAIN-SUFFIX,static.cloudflareinsights.com,DIRECT
-DOMAIN-SUFFIX,cloudflare-dns.com,DIRECT
+DOMAIN-SUFFIX,challenges.cloudflare.com
+DOMAIN-SUFFIX,turnstile.cloudflare.com
+DOMAIN-SUFFIX,turnstile.reCaptcha.cloud
+DOMAIN-SUFFIX,turnstile.cloud
+DOMAIN-SUFFIX,time.cloudflare.com
+DOMAIN-SUFFIX,.cloudflare.com
+DOMAIN-SUFFIX,.cloudflare-cdn.com
+DOMAIN-SUFFIX,static.cloudflareinsights.com
+DOMAIN-SUFFIX,cloudflare-dns.com
 
 # 2. 其他通用 Cloudflare 域名（建议也直连，除非目标网站被墙）
-DOMAIN-SUFFIX,cloudflare.com,DIRECT
+DOMAIN-SUFFIX,cloudflare.com
 
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
