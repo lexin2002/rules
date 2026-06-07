@@ -18,3 +18,7 @@ DOMAIN,xn--4gqx1hgtfdmt.com
 DOMAIN-SUFFIX,ubuntu.com
 DOMAIN,console.bitbrowser.net
 DOMAIN,client.bitbrowser.cn
+DOMAIN-SUFFIX,ghcr.io
+DOMAIN,pkg-containers.githubusercontent.com
+DOMAIN,objects.githubusercontent.com
+DOMAIN,github-releases.githubusercontent.com
