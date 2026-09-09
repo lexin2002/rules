@@ -1,0 +1,29 @@
+# BT tracker / 资源站 直连（给 NAS 下载用）
+# 路由器 rule-provider: bt_direct (behavior: classical)
+# 加新 tracker 域名：在此加一行 DOMAIN-SUFFIX,xxx，commit 后路由器自动拉取
+DOMAIN-SUFFIX,bittorrent.com
+DOMAIN-SUFFIX,transmissionbt.com
+DOMAIN-SUFFIX,utorrent.com
+DOMAIN-SUFFIX,bitcomet.com
+DOMAIN-SUFFIX,bitcomet.net
+DOMAIN-SUFFIX,nyaa.tracker.wf
+DOMAIN-SUFFIX,therarbg.to
+DOMAIN-SUFFIX,wareztorrent.com
+DOMAIN-SUFFIX,sktorrent.eu
+DOMAIN-SUFFIX,foreverpirates.co
+DOMAIN-SUFFIX,waaa.moe
+DOMAIN-SUFFIX,kuroy.me
+DOMAIN-SUFFIX,nekomi.cn
+DOMAIN-SUFFIX,torrentsmd.com
+DOMAIN-SUFFIX,abcvg.info
+DOMAIN-SUFFIX,dgj055.icu
+DOMAIN-SUFFIX,xn--djrq4gl4hvoi.top
+DOMAIN-SUFFIX,213891.xyz
+DOMAIN-SUFFIX,abir.ga
+DOMAIN-SUFFIX,7471.top
+DOMAIN-SUFFIX,004430.xyz
+DOMAIN-SUFFIX,renfei.net
+DOMAIN-SUFFIX,520.jp
+DOMAIN-SUFFIX,dhitechnical.com
+DOMAIN-SUFFIX,leechshield.link
+DOMAIN-SUFFIX,archive.org
